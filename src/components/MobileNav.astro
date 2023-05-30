@@ -1,0 +1,47 @@
+<style>
+    .dropdown{
+        display: grid;
+        transition: grid-template-rows .2s ease;
+    }
+</style>
+<script>
+    let open = false;
+    window.addEventListener("load" , () => {
+        const dropdown = document.getElementById("dropdown");
+        document.getElementById("btn").addEventListener("click" , () => {
+            open = !open;
+            if(open) dropdown.style.gridTemplateRows = "1fr";
+            else dropdown.style.gridTemplateRows = "0fr";
+        })
+    })
+</script>
+<header class="lg:hidden">
+    <nav class="py-2 flex items-center justify-between">
+        <h1 class="text-2xl font-mediu">Numonu</h1>
+        <i id="btn" class="fa-solid fa-bars text-2xl"></i>
+    </nav>
+    <div id="dropdown" class="grid grid-rows-[0fr] transition-[grid-template-rows]">
+        <ul class="flex flex-col items-center gap-2 text-xl overflow-hidden">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">FAQ</a>
+            </li>
+            <li>
+                <a href="#">News</a>
+            </li>
+            <li>
+                <a href="#">Rating</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li class="mb-4">
+                <button class="bg-gradient-to-r from-naranja to-rosa px-4 py-2 rounded-full">
+                    Get Started
+                </button>
+            </li>
+        </ul>
+    </div>
+</header>
