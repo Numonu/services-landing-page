@@ -2,7 +2,10 @@
 import DesktopNav from "../components/DesktopNav.astro";
 import MobileNav from "../components/MobileNav.astro";
 import "../global/styles.css";
-import Wrapper from "../layout/Wrapper.astro";
+import Blobs from "../layout/Blobs.astro";
+import Hero from "../layout/Hero.astro";
+import Statistics from "../layout/Statistics.astro";
+import Wrapper from "../templates/Wrapper.astro";
 ---
 <html lang="en">
 	<head>
@@ -19,24 +22,10 @@ import Wrapper from "../layout/Wrapper.astro";
 			</Wrapper>
 		</div>
 		<div class="bg-slate-900 text-neutral-50 min-h-screen overflow-hidden">
+			<!-- <Blobs/> -->
 			<Wrapper>
-				<div class="py-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
-					<div class="flex flex-col gap-3 items-start justify-center sm:items-center sm:gap-4 lg:items-start">
-						<h2 class="text-naranja uppercase">641 days online</h2>
-						<h1 class="text-4xl font-semibold sm:text-center lg:text-start">Reliable Investments <br> from 1,5% per Day</h1>
-						<p class="text-lg max-w-[500px] sm:text-center lg:text-start">
-							Forex , stocks and cryptocurrency trading.
-							No hidden fees and commissions
-						</p>
-						<button class="bg-gradient-to-r from-naranja to-rosa text-xl px-4 py-2 rounded-full">
-							Get Started
-						</button>
-					</div>
-					<div class="relative">
-						<img class="w-full max-w-[500px] sm:mx-auto lg:max-w-[600px]" src="images/hero_ad.png" alt="person illustration">
-						<div class="bg-gradient-to-t from-slate-900 to-[30%] absolute inset-0"></div>
-					</div>
-				</div>
+				<Hero/>
+				<Statistics/>
 			</Wrapper>
 		</div>
 	</body>
