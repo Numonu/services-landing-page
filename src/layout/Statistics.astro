@@ -1,0 +1,83 @@
+---
+const badgeLinks = [
+	{
+		title: "last investments",
+		link: "#",
+	},
+	{
+		title: "top investors",
+		link: "#",
+	},
+	{
+		title: "last withdraws",
+		link: "#",
+	},
+];
+const statisticsCards = [
+	{
+		value: "12,7m",
+		category: "deposit",
+	},
+	{
+		value: "1,46k",
+		category: "last deposit",
+	},
+	{
+		value: "6,8m",
+		category: "clients",
+	},
+	{
+		value: "44,7k",
+		category: "cls online",
+	},
+	{
+		value: "51m",
+		category: "withdraw",
+	},
+	{
+		value: "16,1k",
+		category: "last w/d",
+	},
+];
+---
+
+<section class="pt-16">
+	<div class="mb-8 flex items-end justify-between gap-4 flex-wrap">
+		<div>
+			<h2 class="text-important">history</h2>
+			<h1 class="text-title">How It Works</h1>
+		</div>
+		<div class="flex gap-4 flex-wrap">
+			{
+				badgeLinks.map((e) => {
+					return (
+						<a href={e.link}>
+							<div class="bg-slate-800 px-6 py-2 rounded-full capitalize ">
+								{e.title}
+								<i class="fa-solid fa-chevron-right text-sm ml-2" />
+							</div>
+						</a>
+					);
+				})
+			}
+		</div>
+	</div>
+	<div class="flex flex-wrap gap-4">
+		{
+			statisticsCards.map((e) => {
+				return (
+					<div class="bg-slate-800 grow bg-opacity-50 p-4 rounded-2xl">
+						<i class="fa-solid fa-arrow-up text-naranja text-xl mb-10" />
+						<div class="mb-2">
+							<i class="fa-solid fa-dollar-sign inline text-xl" />
+							<span class="text-4xl font-bold">{e.value}</span>
+						</div>
+						<h2 class="opacity-50 uppercase tracking-widest">
+							{e.category}
+						</h2>
+					</div>
+				);
+			})
+		}
+	</div>
+</section>

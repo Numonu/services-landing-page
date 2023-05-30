@@ -8,3 +8,12 @@
 body{
     font-family: "Nunito Sans";
 }
+@tailwind components;
+@layer components{
+    .text-title{
+        @apply text-4xl font-semibold;
+    }
+    .text-important{
+        @apply text-naranja uppercase;
+    }
+}
