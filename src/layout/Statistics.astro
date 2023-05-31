@@ -47,20 +47,22 @@ const statisticsCards = [
 			<h2 class="text-important">history</h2>
 			<h1 class="text-title">How It Works</h1>
 		</div>
-		<div class="flex gap-4 flex-wrap">
+		<ul class="flex gap-4 flex-wrap">
 			{
 				badgeLinks.map((e) => {
 					return (
-						<a href={e.link}>
-							<div class="bg-slate-800 px-6 py-2 rounded-full capitalize ">
-								{e.title}
-								<i class="fa-solid fa-chevron-right text-sm ml-2" />
-							</div>
-						</a>
+						<li>
+							<a href={e.link}>
+								<div class="bg-slate-800 px-6 py-2 rounded-full capitalize ">
+									{e.title}
+									<i class="fa-solid fa-chevron-right text-sm ml-2" />
+								</div>
+							</a>
+						</li>
 					);
 				})
 			}
-		</div>
+		</ul>
 	</div>
 	<div class="flex flex-wrap gap-4">
 		{

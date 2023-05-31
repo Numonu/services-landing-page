@@ -1,0 +1,61 @@
+---
+import Acordeon from "../components/Acordeon.astro";
+const category = ["Most Recent", "Relevant", "Popular", "Comun"];
+const faq = [
+	{
+		question: "What are the company's objectives?",
+		answer: "to offer the best services",
+	},
+	{
+		question: "Can I cancel my membership at any time?",
+		answer: "yes, you can cancel at any time",
+	},
+	{
+		question: "Can I get a discount?",
+		answer: "yes, all new members have access to a discount.",
+	},
+	{
+		question: "can i share my account with other people ?",
+		answer: "it is not recommended to share your account, as you may incur additional charges.",
+	},
+];
+---
+
+<section class="pt-16 lg:pt-28">
+	<div class="flex flex-wrap items-end gap-4 justify-between mb-6">
+		<div>
+			<h2 class="text-important">most</h2>
+			<h1 class="text-title">FAQ</h1>
+		</div>
+		<ul class="flex flex-wrap gap-4">
+			{
+				category.map((e) => {
+					return (
+						<li>
+							<a href="#">
+								<div class="bg-slate-800 px-6 py-2 rounded-full capitalize ">
+									{e}
+									<i class="fa-solid fa-chevron-right text-sm ml-2" />
+								</div>
+							</a>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</div>
+	<div class="w-full">
+		{
+			faq.map((e, i) => {
+				return (
+					<Acordeon
+						id={`parent-${i}`}
+						key={`dropdown-${i}`}
+						question={e.question}
+						answer={e.answer}
+					/>
+				);
+			})
+		}
+	</div>
+</section>

@@ -1,0 +1,30 @@
+---
+const {id , key , question , answer} = Astro.props;
+---
+<script define:vars={{
+    id,
+    key
+}}>
+    let open = false;
+    window.addEventListener("load" , () => {
+        const parent = document.getElementById(id);
+        const dropdown = document.getElementById(key);
+        parent.addEventListener("click" , () => {
+            open = !open;
+            dropdown.style.gridTemplateRows = open ? "1fr" : "0fr";
+        })
+    })
+</script>
+<div>
+	<div id={id} class="bg-slate-950 p-3 flex items-center justify-between cursor-pointer">
+		<h1>{question}</h1>
+		<i class="fa-solid fa-chevron-down"></i>
+	</div>
+	<div id={key} class="grid grid-rows-[0fr] transition-[grid-template-rows]">
+		<div class="bg-slate-700 bg-opacity-75 overflow-hidden">
+            <div class="p-3">
+                {answer}
+            </div>
+		</div>
+	</div>
+</div>
