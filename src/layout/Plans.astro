@@ -1,0 +1,74 @@
+---
+const planCards = [
+	{
+		amount: "1,5%",
+		stats: [
+			["term", "20 days"],
+			["principal", "return"],
+		],
+	},
+	{
+		amount: "2%",
+		stats: [
+			["term", "20 days"],
+			["principal", "return"],
+		],
+	},
+	{
+		amount: "650%",
+		stats: [
+			["term", "35 days"],
+			["principal", "included"],
+		],
+	},
+	{
+		amount: "1,500%",
+		stats: [
+			["term", "55 days"],
+			["principal", "included"],
+		],
+	},
+];
+---
+
+<section class="grid grid-cols-1 gap-8 pt-12 lg:grid-cols-2 lg:pt-28">
+	<div class="flex items-start flex-col gap-4 pt-16 sm:items-center lg:items-start">
+		<h2 class="text-important">numbers</h2>
+		<h1 class="text-title">Choose Your Plan</h1>
+		<p class="text-lg opacity-50 max-w-[600px] sm:text-center lg:text-start">
+			Roobinium is the solution a global , decentralized advertising
+			exchange based on the fusion of Neural Networks
+		</p>
+		<button
+			class="bg-gradient-to-r from-naranja to-rosa text-xl px-4 py-2 rounded-full"
+		>
+			Read More
+		</button>
+	</div>
+	<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:-order-1">
+		{
+			planCards.map((e) => {
+				return (
+					<div class="bg-slate-800 bg-opacity-50 p-4 rounded-2xl">
+						<div class="bg-naranja w-10 h-2 rounded-full mb-8" />
+						<div class="flex flex-col gap-2">
+							<span class="text-title">{e.amount}</span>
+							{e.stats.map(([a, b]) => {
+								return (
+									<div class="flex justify-between">
+										<span class="opacity-70 uppercase text-sm">
+											{a}
+										</span>
+										<span class="capitalize text-lg">
+											{b}
+										</span>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+				);
+			})
+		}
+	</div>
+</section>
